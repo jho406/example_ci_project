@@ -1,0 +1,7 @@
+{
+  "name": "example_ci_project",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}
