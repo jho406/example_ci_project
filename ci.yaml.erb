@@ -1,0 +1,3 @@
+<% @node_tests.each do |tests| %>
+- bundle exec rspec <%= tests.join(' ') %>
+<% end %>
