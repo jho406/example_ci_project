@@ -1,0 +1,22 @@
+version: '2'
+volumes:
+  artifacts:
+services:
+  postgresql:
+    image: postgres:9.2
+  app:
+    app: <%= @image %>
+    command: <%= @command %>
+    environment:
+      SPEC_OPTS: --format progress --format json --profile --out /usr/src/artifacts/report.json
+      PGHOST: postgresql
+      PGPORT: 5432
+      PGUSER: postgres
+      PG_HOST: postgresql
+      PG_PORT: 5432
+      PG_USER: postgres
+    links:
+      - postgresql
+    volumes:
+      - artifacts:/usr/src/artifacts/
+
