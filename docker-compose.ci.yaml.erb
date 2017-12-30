@@ -5,7 +5,7 @@ services:
   postgresql:
     image: postgres:9.2
   app:
-    image: jho406/app
+    image: jho406/app:<%= @tag %>
     command: <%= @command %>
     environment:
       SPEC_OPTS: --format progress --format json --profile --out /usr/src/artifacts/report.json
